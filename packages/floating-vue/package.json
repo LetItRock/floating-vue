@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development vite build --watch",
     "build": "cross-env NODE_ENV=production vite build && tsc -d --emitDeclarationOnly && vue-typegen gen -s src -o dist",
+    "prepare": "yarn run build",
     "prepublishOnly": "yarn run lint && yarn run test && yarn run build",
     "test": "yarn run test:unit",
     "lint": "eslint . --ext .js,.vue",
